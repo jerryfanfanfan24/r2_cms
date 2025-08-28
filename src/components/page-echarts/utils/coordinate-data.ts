@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const coordinateData: any = {
   海门: [121.15, 31.89],
   鄂尔多斯: [109.781327, 39.608266],

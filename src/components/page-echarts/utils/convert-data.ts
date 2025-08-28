@@ -1,5 +1,6 @@
 import { coordinateData } from './coordinate-data'
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function convertData(data: any) {
   const res = []
   for (let i = 0; i < data.length; i++) {
