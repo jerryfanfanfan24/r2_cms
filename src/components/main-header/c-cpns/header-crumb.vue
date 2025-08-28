@@ -1,0 +1,29 @@
+<template>
+  <div class="header-crumb">
+    <el-breadcrumb separator-icon="CaretRight">
+      <template v-for="item in breadcrumbs" :key="item.name">
+        <el-breadcrumb-item :to="item.url">{{ item.name }}</el-breadcrumb-item>
+      </template>
+    </el-breadcrumb>
+  </div>
+</template>
+
+<script setup lang="ts">
+import useLoginStore from '@/stores/login/login'
+import { mapPathToBreadcrumbs, type UserMenu } from '@/utils/map-menus'
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
+const loginStore = useLoginStore()
+const userMenus: UserMenu[] = loginStore.userMenus
+const breadcrumbs = computed(() => {
+  return mapPathToBreadcrumbs(route.path, userMenus)
+})
+</script>
+
+<style lang="less" scoped>
+.header-crumb {
+  color: red;
+}
+</style>
