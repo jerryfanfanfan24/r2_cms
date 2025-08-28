@@ -39,3 +39,4 @@ npm run lint
 ```
 # cms_template
 # r2_cms
+# r2_cms
